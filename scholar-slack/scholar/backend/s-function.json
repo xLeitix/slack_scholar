@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "runtime": "python2.7",
+  "description": "Serverless Lambda function for project: scholar-slack",
+  "customName": false,
+  "customRole": false,
+  "handler": "handler.handler",
+  "timeout": 15,
+  "memorySize": 1024,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": []
+  },
+  "endpoints": [],
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}
