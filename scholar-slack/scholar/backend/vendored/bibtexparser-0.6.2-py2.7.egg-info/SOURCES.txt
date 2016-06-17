@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+README.rst
+setup.cfg
+setup.py
+bibtexparser/__init__.py
+bibtexparser/bibdatabase.py
+bibtexparser/bparser.py
+bibtexparser/bwriter.py
+bibtexparser/customization.py
+bibtexparser/latexenc.py
+bibtexparser.egg-info/PKG-INFO
+bibtexparser.egg-info/SOURCES.txt
+bibtexparser.egg-info/dependency_links.txt
+bibtexparser.egg-info/top_level.txt

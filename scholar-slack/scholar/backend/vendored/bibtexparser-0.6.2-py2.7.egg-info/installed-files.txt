@@ -1,0 +1,17 @@
+../bibtexparser/__init__.py
+../bibtexparser/bibdatabase.py
+../bibtexparser/bparser.py
+../bibtexparser/bwriter.py
+../bibtexparser/customization.py
+../bibtexparser/latexenc.py
+../bibtexparser/__init__.pyc
+../bibtexparser/bibdatabase.pyc
+../bibtexparser/bparser.pyc
+../bibtexparser/bwriter.pyc
+../bibtexparser/customization.pyc
+../bibtexparser/latexenc.pyc
+.
+dependency_links.txt
+PKG-INFO
+SOURCES.txt
+top_level.txt

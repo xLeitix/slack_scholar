@@ -21,9 +21,9 @@
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {
-          "application/x-www-form-urlencoded": {
-              "body": "$input.json('$')"
-          }
+        "application/x-www-form-urlencoded": {
+          "body": "$input.json('$')"
+        }
       },
       "responses": {
         "400": {
@@ -33,10 +33,10 @@
           "statusCode": "200",
           "responseParameters": {},
           "responseModels": {
-            "application/json;charset=UTF-8": "Empty"
+            "application/json": "Empty"
           },
           "responseTemplates": {
-            "application/json;charset=UTF-8": ""
+            "application/json": ""
           }
         }
       }
