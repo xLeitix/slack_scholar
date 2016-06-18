@@ -40,20 +40,13 @@ def query_scholar_for_papers(author, searchstring):
     query.set_author(author)
     query.set_phrase(searchstring)
 
-    log.info("Ready to query GS")
-
     querier.send_query(query)
 
-    log.info("Received answer from GS")
-
     return_str = ''
-    for article in querier.articles:
-        return_str += article.as_citation() + '\n'
-    if return_str == '':
+    if len(querier.articles) > 0:
+        return_str += querier.articles[0].as_citation() + '\n'
+    else:
         return_str = 'Ooopsie. No results. Maybe we ran over the request limit?'
-
-    log.info("Returning back to Slack")
-    log.info("All done")
 
     return return_str
 
