@@ -5,16 +5,27 @@ import logging
 import sys, os
 from urlparse import parse_qs
 from boto3 import client as boto3_client
+from base64 import b64decode
 
 log = logging.getLogger()
 log.setLevel(logging.DEBUG)
 
 lambda_client = boto3_client('lambda')
 
+with open("lib/token.secret") as secretfile:
+    ENCRYPTED_EXPECTED_TOKEN = secretfile.read().strip()
+kms = boto3_client('kms')
+expected_token = kms.decrypt(CiphertextBlob = b64decode(ENCRYPTED_EXPECTED_TOKEN))['Plaintext']
+
 def handler(event, context):
 
     req_body = event['body']
     params = parse_qs(req_body)
+
+    token = params['token'][0]
+    if token != expected_token:
+        log.error("Request token (%s) does not match exptected", token)
+        return "Received invalid request token"
 
     author = params['text'][0] if 'text' in params else ""
     response_url = params['response_url'][0]
