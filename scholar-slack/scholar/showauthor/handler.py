@@ -16,9 +16,15 @@ def handler(event, context):
     req_body = event['body']
     params = parse_qs(req_body)
 
-    author = params['text'][0]
+    author = params['text'][0] if 'text' in params else ""
     response_url = params['response_url'][0]
     user = params['user_name'][0]
+
+    if author == "help" or author == "usage" or author == "":
+        return {"text":"Usage: /whois <authorname>",
+                "attachments" : [
+                    {"text":"Example: /whois philipp leitner"}
+                ]}
 
     lambda_client.invoke(FunctionName="slack-scholar-backend",
                                            InvocationType='Event',

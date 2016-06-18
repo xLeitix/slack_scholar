@@ -16,11 +16,20 @@ def handler(event, context):
     req_body = event['body']
     params = parse_qs(req_body)
 
-    command = params['text'][0]
+    command = params['text'][0] if 'text' in params else ""
     response_url = params['response_url'][0]
     user = params['user_name'][0]
 
-    author, searchstring = command.split(" ", 1)
+    params_splitted = command.split(" ", 1)
+
+    if command == "help" or command == "usage" or len(params_splitted) == 1:
+        return {"text":"Usage: /bibtex <author> <searchstring>",
+                "attachments" : [
+                    {"text":"Example: /bibtex leitner patterns in the chaos"},
+                    {"text":"Note that <author> is always just the first word of your argument"}
+                ]}
+
+    author, searchstring = params_splitted
 
     lambda_client.invoke(FunctionName="slack-scholar-backend",
                                            InvocationType='Event',
