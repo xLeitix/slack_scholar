@@ -1,7 +1,7 @@
 {
   "name": "slack-scholar",
   "version": "0.0.1",
-  "description": "A Serverless Project and its Serverless Plugin dependencies.",
+  "description": "A Serverless implementation of a Google Scholar command for Slack.",
   "author": "me",
   "license": "MIT",
   "private": false,

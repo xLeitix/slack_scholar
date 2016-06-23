@@ -24,7 +24,7 @@ def handler(event, context):
 
     token = params['token'][0]
     if token != expected_token:
-        log.error("Request token (%s) does not match exptected", token)
+        log.error("Request token (%s) does not match expected token", token)
         return "Received invalid request token"
 
     author = params['text'][0] if 'text' in params else ""
