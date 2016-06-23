@@ -8,13 +8,13 @@ This simple Python bot brings two new commands to your [Slack](https://slack.com
 
 (finds a Bibtex entry for a given paper)
 
-<img src="https://github.com/xLeitix/slack_scholar/raw/master/img/bibtex_cmd.png" alt="Example /bibtex command" style="width: 500px;"/>
+<img src="https://github.com/xLeitix/slack_scholar/raw/master/img/bibtex_cmd.png" alt="Example /bibtex command" style="width: 200px;"/>
 
 `/whois [author searchstring]`
 
 (displays Google Scholar author information about a researcher)
 
-<img src="https://github.com/xLeitix/slack_scholar/raw/master/img/whois_cmd.png" alt="Example /whois command" style="width: 500px;"/>
+<img src="https://github.com/xLeitix/slack_scholar/raw/master/img/whois_cmd.png" alt="Example /whois command" style="width: 200px;"/>
 
 That's it. That's pretty much all the bot does for now :)
 
